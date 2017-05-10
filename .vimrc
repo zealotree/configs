@@ -121,27 +121,13 @@ map <C-N><C-N> :set relativenumber<CR>
 
 
 set guifont:Droid\ Sans\ Mono\ 10
-"set guifont:Inconsolata-dz\ 10
-"colorscheme chlordane
-"colorscheme dracula
-"highlight ColorColumn ctermbg=DarkGray
-"colorscheme amy
-"colorscheme automation
 
 
-command! Prose inoremap <buffer> . .<C-G>u|
-            \ inoremap <buffer> ! !<C-G>u|
-            \ inoremap <buffer> ? ?<C-G>u|
-            \ setlocal spell spelllang=en
-            \     nolist nowrap columns=100 tw=80 fo=t1 nonu|
-            \ augroup PROSE|
-            \   autocmd InsertEnter <buffer> set fo+=a|
-            \   autocmd InsertLeave <buffer> set fo-=a|
-            \ augroup END
+" show a visual line under the cursor's current line
+set cursorline
 
-command! Code silent! iunmap <buffer> .|
-            \ silent! iunmap <buffer> !|
-            \ silent! iunmap <buffer> ?|
-            \ setlocal nospell list nowrap
-            \     tw=74 fo=cqr1 showbreak=â€¦ nu|
-            \ silent! autocmd! PROSE * <buffer>
+" show the matching part of the pair for [] {} and ()
+set showmatch
+
+" enable all Python syntax highlighting features
+let python_highlight_all = 1
